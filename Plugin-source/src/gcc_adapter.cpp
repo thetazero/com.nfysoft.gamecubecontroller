@@ -1,7 +1,10 @@
 #include <iostream>
 #include <thread>
+#include <atomic>
 #include <array>
 #include <mutex>
+#include <string.h>
+#include <libusb-1.0/libusb.h>
 
 #include "gcc_adapter.h"
 #include "gcc_error.h"
@@ -225,7 +228,7 @@ static bool initialize() {
 static void debug_log(const char *message) {
     if (log_callback == nullptr) return;
 
-    strcpy_s(last_debug_message, sizeof(last_debug_message), message);
+    strcpy(last_debug_message, message);
     log_callback(last_debug_message);
 }
 

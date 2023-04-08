@@ -156,3 +156,5 @@ sysinfo.txt
 .idea/
 
 # End of https://www.toptal.com/developers/gitignore/api/unity,rider
+Plugin-source/CMakeFiles
+Plugin-source/CMakeCache.txt
